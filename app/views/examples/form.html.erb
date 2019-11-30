@@ -1,11 +1,22 @@
-<h1>Examples#form <%= @busco %></h1>
+<h1>Examples#form <%= @palabra %></h1>
 <p>Find me in app/views/examples/form.html.erb</p>
-<div id="resultados">
-     <%= @autor %>
-     
-    </div>
-     <form class="form-inline my-2 my-lg-0" id="search-form2" action="form" method="get" data-remote="false" >
-     <input class="form-control mr-sm-2" type="search" name="keyword3" placeholder="Search" aria-label="Search">
+<div id="resultados" class="alert alert-primary" role="alert">      
+</div>   
+   <form class="form-inline my-2 my-lg-0" id="search-form2" action="/search/create" method="get" data-remote="true" accept-charset="UTF-8" >
+     <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
    </form>
+   
+   
+
+<script>
+$ (document).ready(function() {
+   console.log("jquery");
+   
+    $("#resultados").click(function() {
+        alert ("<%= @busco  %>");
+    });
+});
+
+</script>
 

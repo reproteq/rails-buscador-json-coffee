@@ -1,32 +1,14 @@
 <%= javascript_pack_tag 'hello_coffee' %>
 <div id="resultados" class="alert alert-primary" role="alert">
-     <%= @autor %>
-     <%= @busco %>
-     
+     <%= @palabra %>     
 </div>
-
-<%= form_tag "#", method: :get, remote:false , id:"search-form" do %>
-<%= text_field_tag :keyword, nil, placeholder: "Buscar aqui" %>
-<%= content_tag :button, type: :submit do %>
+ 
+<%= form_tag "/search/create", method: :get, remote:true , id:"search-form" ,class:"form-inline my-2 my-lg-0" do %>
+<%= text_field_tag :keyword, nil, placeholder: "Buscar aqui" ,class:"form-control mr-sm-2" %>
+<%= content_tag :button ,class:"btn btn-outline-success my-2 my-sm-0", type: :submit do %>
 buscar
 <%end%>
 <%end%>
-
-
-   <form class="form-inline my-2 my-lg-0" id="search-form2" action="/search/create" method="get" data-remote="true" >
-     <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
-     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-   </form>
-   
-<script>
-$ (document).ready(function() {
-   console.log("jquery");
-    $("#resultados").click(function() {
-        alert ("hola jquery");
-    });
-});
-
-</script>
 
 
 

@@ -1,8 +1,5 @@
 class MainController < ApplicationController
   def index
-    @autor = 'tato'
-    @busco = params[:keyword]
-    
-    
+    @palabra = params[:keyword]       
   end
 end
